@@ -1,0 +1,14 @@
+.container {
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+/* 
+    .logo {
+        width: 180px;
+    } */
+
+    .stack-container {
+        width: 84%;
+    }
+}

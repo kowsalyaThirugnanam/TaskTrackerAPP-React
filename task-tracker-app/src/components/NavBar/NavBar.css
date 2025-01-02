@@ -1,0 +1,31 @@
+/* .container1 {
+    padding: 10px;
+
+    .sideNavContainer {
+        display: flex;
+        padding-inline: 10px;
+        padding-block: 30px;
+        height: inherit;
+
+        nav {
+
+
+
+            width: 200px;
+            border-right: 1px solid;
+        }
+    }
+} */
+.logo {
+    width: 150px;
+    margin: 10px;
+}
+
+.user-account {
+    margin-left: auto;
+    margin-right: 0;
+}
+.user-name {
+    padding-inline-start: 10px;
+
+}
