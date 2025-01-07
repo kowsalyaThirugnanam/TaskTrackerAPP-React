@@ -67,6 +67,37 @@ button:focus-visible {
   }
 } */
 
-:root{
-    font-family: sans-serif;
+:root {
+  font-family: sans-serif;
 }
+
+/* .form-container {
+  width: 500px;
+  margin: auto;
+
+  .form-label {
+    padding-inline-start: 125px;
+    float: left;
+  }
+
+  .form-input,
+  .error-input {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    margin-block: 10px;
+  }
+
+  .error-display {
+    margin: auto;
+    text-align: left;
+    padding-inline-start: 126px;
+    color: #fc8181;
+    font-size: 13px;
+  }
+
+  input.error-input,
+  select.error-input {
+    border: 3px solid #fc8181;
+  }
+} */

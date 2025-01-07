@@ -9,7 +9,7 @@ const Login = () => {
 
     // value - will give the form object
     // action parameter will return set of function
-    //  in that resetForm is used to reset the form after submit
+    //  in that  action.resetForm(); is used to reset the form after submit
     const onSubmit = (value, action) => {
         console.log("submitted");
         console.log(value);

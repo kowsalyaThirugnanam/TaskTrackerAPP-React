@@ -18,7 +18,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import { useNavigate } from "react-router-dom";
 const drawerWidth = 240;
 // below Main ,AppBar, DrawerHeader - will provide the styles , Get it from MUI(Material UI Persistent Drawer functionality)
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -78,6 +78,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 
 const NavBar = () => {
+    const navigate = useNavigate();
     const navList = ['Dashboard'];
     const [open, setOpen] = React.useState(false);
     const theme = useTheme();
@@ -95,6 +96,19 @@ const NavBar = () => {
     const logout = () => {
         console.log("Logout");
 
+    }
+
+    const navigationTo = (params)=>{
+        console.log("navigationTo",params);
+        switch (params) {
+            case "Dashboard":
+                navigate("/navbar/dashboard");
+                break;
+        
+            default:
+                break;
+        }
+        
     }
     return (
 
@@ -147,7 +161,7 @@ const NavBar = () => {
                 <List>
                     {navList.map((text, index) => (
                         <ListItem key={text} disablePadding>
-                            <ListItemButton>
+                            <ListItemButton onClick={()=>navigationTo(text)}>
                                 <ListItemIcon>
                                     {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                                     <InboxIcon />

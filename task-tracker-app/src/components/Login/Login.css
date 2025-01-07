@@ -16,6 +16,7 @@
         .form-label {
             padding-inline-start: 125px;
             float: left;
+            color:inherit
         }
 
         .form-input,.error-input {

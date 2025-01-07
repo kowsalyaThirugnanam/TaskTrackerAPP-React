@@ -1,0 +1,52 @@
+.add-category-container {
+    /* width: 500px; */
+    text-align: center;
+    padding: 10px;
+}
+
+.form-container {
+    width: 500px;
+    margin: auto;
+
+    .form-label {
+        padding-inline-start: 19px;
+        float: left;
+        color: rgb(101 46 199);
+    }
+
+    .form-input,
+    .error-input {
+        width: 470px;
+        height: 40px;
+        border-radius: 5px;
+        margin-block: 10px;
+    }
+
+    .error-display {
+        margin: auto;
+        text-align: left;
+        padding-inline-start: 19px;
+        color: #fc8181;
+        font-size: 13px;
+    }
+
+    input.error-input,
+    select.error-input {
+        border: 3px solid #fc8181;
+    }
+
+}
+
+.text-description {
+    width: 470px;
+    /* height: 30px; */
+    border-radius: 5px;
+    margin-block: 10px;
+}
+.button-stack{
+    padding: 10px;
+    text-align: right;
+    .btn{
+        margin-inline: 10px;
+    }
+}
