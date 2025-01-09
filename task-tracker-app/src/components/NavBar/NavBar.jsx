@@ -19,6 +19,9 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from "react-router-dom";
+import {  signOut } from "firebase/auth";
+import {auth} from '../../firebase/firebase';
+
 const drawerWidth = 240;
 // below Main ,AppBar, DrawerHeader - will provide the styles , Get it from MUI(Material UI Persistent Drawer functionality)
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -95,6 +98,12 @@ const NavBar = () => {
 
     const logout = () => {
         console.log("Logout");
+        signOut(auth).then(()=>{
+            navigate("/")
+        }).catch((error)=>{
+            console.log("error in logout ==>",error);
+            
+        })
 
     }
 

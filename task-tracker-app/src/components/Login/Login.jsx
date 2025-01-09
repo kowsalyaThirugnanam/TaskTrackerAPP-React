@@ -4,24 +4,42 @@ import Button from '@mui/material/Button';
 import { useFormik } from "formik";
 import { LoginSchema } from './LoginSchema';
 import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
 const Login = () => {
     const navigate = useNavigate();
 
     // value - will give the form object
     // action parameter will return set of function
     //  in that  action.resetForm(); is used to reset the form after submit
-    const onSubmit = (value, action) => {
+    const onSubmit = async (value, action) => {
         console.log("submitted");
-        console.log(value);
+        console.log("value==>", value);
         console.log(action);
-        setTimeout(() => {
-            // after 2 sec form resetted.
-            action.resetForm();
-            navigate("/navbar/dashboard")
-        }, 2000);
+
+        await signInWithEmailAndPassword(auth, value.email, value.password)
+            .then((userCredential) => {
+                console.log("userCredential", userCredential);
+                const user = userCredential.user
+                console.log("userinfo==>", user);
+                action.resetForm();
+                navigate("/navbar/dashboard")
+
+            })
+            .catch((error) => {
+                console.log("error==>", error);
+
+            })
+        console.log("first==>");
+
+        // setTimeout(() => {
+        //     // after 2 sec form resetted.
+        //     action.resetForm();
+        //     navigate("/navbar/dashboard")
+        // }, 2000);
 
     }
-    const { values, errors, touched,isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
+    const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: {
             email: "",
             password: ""

@@ -11,10 +11,13 @@ import {
 } from '@mui/material'
 import AddCategory from '../AddCategory/AddCategory';
 import { useNavigate } from "react-router-dom";
+
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-
+  const apiUrl = import.meta.env.VITE_API_KEY;
+  console.log("apiUrl ==>",apiUrl);
+  
   const handleAddCategoryOpen = () => {
     setOpen(true);
   };

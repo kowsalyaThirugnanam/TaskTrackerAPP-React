@@ -10,6 +10,7 @@ const routes = createBrowserRouter([
   { path: "/", element: <Login />, errorElement: <PageNotFound /> },
   // { path: "/navbar", element: <NavBar /> },
   // { path: "/dashboard", element: <Dashboard /> }
+ 
   {
     path: "navbar", element: <NavBar />, children: [
       { path: "dashboard", element: <Dashboard /> },
@@ -22,8 +23,7 @@ const routes = createBrowserRouter([
 )
 const App = () => {
   return (
-    <RouterProvider router={routes}>
-    </RouterProvider>
+    <RouterProvider router={routes}/>
   )
 }
 
